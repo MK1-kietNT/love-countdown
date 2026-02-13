@@ -182,6 +182,11 @@ export function clearAllData(): void {
     localStorage.removeItem(CAPSULE_KEY);
     localStorage.removeItem(STATS_KEY);
     localStorage.removeItem(SILENT_KEY);
+    // New features
+    localStorage.removeItem("love-countdown-bucket");
+    localStorage.removeItem("love-countdown-promises");
+    localStorage.removeItem("love-countdown-truth");
+    localStorage.removeItem("love-countdown-memories");
   }
 }
 

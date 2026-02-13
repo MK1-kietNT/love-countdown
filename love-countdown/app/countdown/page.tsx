@@ -19,7 +19,13 @@ import LoveStatistics from "@/components/LoveStatistics";
 import DailyQuote from "@/components/DailyQuote";
 import SilentMode from "@/components/SilentMode";
 import SpinWheel from "@/components/SpinWheel";
-
+import LoveQuiz from "@/components/LoveQuiz";
+import LoveLetter from "@/components/LoveLetter";
+import BucketList from "@/components/BucketList";
+import HeartSender from "@/components/HeartSender";
+import PromiseWall from "@/components/PromiseWall";
+import TruthOrDare from "@/components/TruthOrDare";
+ 
 export default function CountdownPage() {
   const router = useRouter();
   const [coupleData, setCoupleData] = useState<CoupleData | null>(null);
@@ -328,6 +334,98 @@ export default function CountdownPage() {
             <SpinWheel category="date" />
           </motion.section>
         </div>
+
+        {/* Love Quiz & Love Letter */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <motion.section
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.92 }}
+          >
+            <LoveQuiz
+              boyName={coupleData.boyName}
+              girlName={coupleData.girlName}
+              boyNickname={coupleData.boyNickname}
+              girlNickname={coupleData.girlNickname}
+            />
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.94 }}
+          >
+            <LoveLetter
+              boyName={coupleData.boyName}
+              girlName={coupleData.girlName}
+              boyNickname={coupleData.boyNickname}
+              girlNickname={coupleData.girlNickname}
+            />
+          </motion.section>
+        </div>
+
+        {/* Truth or Dare & Heart Sender */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <motion.section
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.96 }}
+          >
+            <TruthOrDare
+              boyName={coupleData.boyName}
+              girlName={coupleData.girlName}
+              boyNickname={coupleData.boyNickname}
+              girlNickname={coupleData.girlNickname}
+            />
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.98 }}
+          >
+            <HeartSender
+              boyName={coupleData.boyName}
+              girlName={coupleData.girlName}
+              boyNickname={coupleData.boyNickname}
+              girlNickname={coupleData.girlNickname}
+            />
+          </motion.section>
+        </div>
+
+        {/* Promise Wall & Bucket List */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <motion.section
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.0 }}
+          >
+            <PromiseWall
+              boyName={coupleData.boyName}
+              girlName={coupleData.girlName}
+              boyNickname={coupleData.boyNickname}
+              girlNickname={coupleData.girlNickname}
+            />
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.02 }}
+          >
+            <BucketList />
+          </motion.section>
+        </div>
+
+        {/* Memory Timeline */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.04 }}
+          className="mb-6"
+        >
+            
+        </motion.section>
 
         {/* Action Buttons */}
         <motion.div
