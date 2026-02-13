@@ -14,7 +14,6 @@ export default function MusicPlayer() {
       "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
     );
     audioRef.current.loop = true;
-    audioRef.current.volume = volume;
 
     return () => {
       if (audioRef.current) {
@@ -55,10 +54,9 @@ export default function MusicPlayer() {
           className={`
             w-12 h-12 rounded-full flex items-center justify-center
             text-2xl shadow-lg transition-all
-            ${
-              isPlaying
-                ? "bg-gradient-to-r from-pink-400 to-purple-400 text-white"
-                : "bg-white text-pink-500"
+            ${isPlaying
+              ? "bg-gradient-to-r from-pink-400 to-purple-400 text-white"
+              : "bg-white text-pink-500"
             }
           `}
         >

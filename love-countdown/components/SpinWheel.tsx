@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SpinWheelProps {
@@ -56,7 +56,9 @@ export default function SpinWheel({ title, category = "food" }: SpinWheelProps) 
     const wheelRef = useRef<HTMLDivElement>(null);
 
     const storageKey = category === "food" ? "spinWheel_food" : "spinWheel_date";
-    const defaultOptions = category === "food" ? DEFAULT_FOOD_OPTIONS : DEFAULT_DATE_OPTIONS;
+    const defaultOptions = useMemo(() =>
+        category === "food" ? DEFAULT_FOOD_OPTIONS : DEFAULT_DATE_OPTIONS,
+        [category]);
     const displayTitle = title || (category === "food" ? "Hôm nay ăn gì? 🍽️" : "Hẹn hò ở đâu? 💕");
 
     useEffect(() => {
@@ -66,7 +68,7 @@ export default function SpinWheel({ title, category = "food" }: SpinWheelProps) 
         } else {
             setOptions(defaultOptions);
         }
-    }, [storageKey]);
+    }, [storageKey, defaultOptions]);
 
     const saveOptions = (newOptions: string[]) => {
         setOptions(newOptions);

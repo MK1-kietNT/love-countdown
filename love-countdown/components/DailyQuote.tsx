@@ -22,7 +22,7 @@ export default function DailyQuote() {
         </motion.span>
         <div className="flex-1">
           <p className="text-sm text-gray-500 mb-1">Câu nói hôm nay</p>
-          <p className="text-gray-700 font-medium italic">"{quote}"</p>
+          <p className="text-gray-700 font-medium italic">&quot;{quote}&quot;</p>
         </div>
       </div>
     </motion.div>

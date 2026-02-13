@@ -25,7 +25,8 @@ import BucketList from "@/components/BucketList";
 import HeartSender from "@/components/HeartSender";
 import PromiseWall from "@/components/PromiseWall";
 import TruthOrDare from "@/components/TruthOrDare";
- 
+import MemoryTimeline from "@/components/MemoryTimeline";
+
 export default function CountdownPage() {
   const router = useRouter();
   const [coupleData, setCoupleData] = useState<CoupleData | null>(null);
@@ -424,7 +425,12 @@ export default function CountdownPage() {
           transition={{ delay: 1.04 }}
           className="mb-6"
         >
-            
+          <MemoryTimeline
+            boyName={coupleData.boyName}
+            girlName={coupleData.girlName}
+            boyNickname={coupleData.boyNickname}
+            girlNickname={coupleData.girlNickname}
+          />
         </motion.section>
 
         {/* Action Buttons */}

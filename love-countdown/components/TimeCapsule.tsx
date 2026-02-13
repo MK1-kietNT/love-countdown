@@ -167,7 +167,7 @@ export default function TimeCapsule({
         >
           <div className="text-4xl mb-4">💝</div>
           <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-4 mb-4">
-            <p className="text-gray-700 italic">"{capsule.message}"</p>
+            <p className="text-gray-700 italic">&quot;{capsule.message}&quot;</p>
             <p className="text-xs text-gray-400 mt-2">
               — Viết lúc {new Date(capsule.createdAt).toLocaleDateString("vi-VN")}
             </p>
@@ -190,7 +190,7 @@ export default function TimeCapsule({
         >
           <div className="text-4xl mb-4">💝</div>
           <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-4 mb-4">
-            <p className="text-gray-700 italic">"{capsule.message}"</p>
+            <p className="text-gray-700 italic">&quot;{capsule.message}&quot;</p>
             <p className="text-xs text-gray-400 mt-2">
               — Viết lúc {new Date(capsule.createdAt).toLocaleDateString("vi-VN")}
             </p>
